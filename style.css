@@ -4,6 +4,9 @@ h1 {
 }
 
 .directory {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 25%;
     padding: 0;
     margin: 0;
     border: none;
