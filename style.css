@@ -3,57 +3,19 @@ h1 {
 
 }
 
-.directory {
-    display: flex;
-    flex: 1 0 25%;
-    padding: 0;
-    margin: 0;
-    border: none;
-    max-width: 200px;
-}
-
-.card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: aquamarine;
-    padding: 0;
-    margin: 0;
-    border: 0;
-    
-}
-
 img {
-    border-radius: 50%;
-    position: relative;
-    flex: 1 1 auto;
-    aspect-ratio: 1;
+    border-radius: 50px 80px 50px 80px;
     image-rendering: crisp-edges;
     
 }
 
-h2 {
-    padding: 10px;
-    margin: auto;
-}
-
-.container {
+#directory {
     display: flex;
-    flex-direction: column;
-    flex: 1 0 auto;
-    align-items: center;
-    
+    flex-wrap: wrap;
+    flex-direction: row;
 }
 
-ul li {
-    list-style-type: none;
-    font-weight: bold;
-}
-
-.city {
-    padding: 0 0 8px;
-}
-
-.phone2 {
-    padding: 0 0 8px;
+.person {
+    margin: 20px;
+    width: 20%;
 }

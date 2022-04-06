@@ -22,14 +22,17 @@ function remove(date) {
 }
 
 // ask js to build a div
-const allCustomersDiv = document.querySelector("#directory");
 // a loop to each customer
 for (let customer of customers) {
+  const allCustomerDiv = document.querySelector("#directory");
   // showing the first and last name to dev
   console.log(`${customer.name.first} ${customer.name.last}`);
   let custDiv = document.createElement("div");
   custDiv.classList.add("person");
-  // on this document create and element h2 and store as nameEl
+  // on this document create and element h2 and store as nameEl--- defined the function on line 14 and call the function on line 34
+  let imageEl = document.createElement("img");
+  imageEl.src = customer.picture.thumbnail;
+
   let nameEl = document.createElement("h2");
   nameEl.innerText = `${capitalizeFirstLetter(
     customer.name.first
@@ -42,22 +45,19 @@ for (let customer of customers) {
   ${customer.location.postcode}`;
 
   let dobEl = document.createElement("div");
-  dobEl.innerText = `${moment(customer.dob.date).format("MMM Do, YYYY")}`;
+  dobEl.innerText = `${moment(customer.dob.date).format("MMM Do YYYY")}`;
 
   let emailEl = document.createElement("div");
   emailEl.innerText = `${customer.email}`;
 
   let dorEl = document.createElement("div");
-  dorEl.innerText = `${customer.registered.date}`;
+  dorEl.innerText = `${moment(customer.registered.date).format("MMM Do YYYY")}`;
 
-  let imageEl = document.createElement("img");
-  imageEl.src = customer.picture.thumbnail;
-
-  allCustomersDiv.appendChild(nameEl);
-  allCustomersDiv.appendChild(custDiv);
-  allCustomersDiv.appendChild(addressEl);
-  allCustomersDiv.appendChild(dobEl);
-  allCustomersDiv.appendChild(emailEl);
-  allCustomersDiv.appendChild(dorEl);
-  allCustomersDiv.appendChild(imageEl);
+  custDiv.appendChild(imageEl);
+  custDiv.appendChild(nameEl);
+  custDiv.appendChild(emailEl);
+  custDiv.appendChild(addressEl);
+  custDiv.appendChild(dobEl);
+  custDiv.appendChild(dorEl);
+  allCustomerDiv.appendChild(custDiv);
 }
